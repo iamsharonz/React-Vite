@@ -1,15 +1,19 @@
 import { MouseEvent, useState } from "react";
 
-function ListGroup()
+interface Props{
+    items: string[];
+    heading: string;
+}
+
+function ListGroup({items, heading}: Props)
 {
-    let items = ['Africa', 'Antartica', 'Anasthesia'];
     //const handleClick = (event: MouseEvent) => console.log(event);
     const [selectedIndex, setSelectedIndex] = useState(-1);
 
     return(
          //  fragements - as react cant return multiple elements 
         <>
-    <h1>List</h1>
+    <h1>{heading}</h1>
     {/* {items.length === 0 ? <p>No items found!</p> : null} */}
     {items.length === 0 && <p>No items found</p>}
     <ul className="list-group">
